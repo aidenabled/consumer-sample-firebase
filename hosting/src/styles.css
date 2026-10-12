@@ -1,0 +1,31 @@
+:root {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #203a33; background: #f5f6f1; font-synthesis: none; line-height: 1.4;}
+* {box-sizing: border-box;}
+body {margin: 0; min-width: 280px;}
+.shell {width: 100%; max-width: 1280px; min-height: 100vh; min-height: 100dvh; margin: auto; padding: clamp(16px, 3vw, 40px); display: flex; flex-direction: column; gap: clamp(16px, 3vh, 32px);}
+header {display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: clamp(12px, 2vh, 24px); border-bottom: 1px solid #d8e0d6;}
+.brand {font-size: clamp(20px, 2.3vw, 28px); font-weight: 650; letter-spacing: -.5px;}
+.connection {display: flex; align-items: center; gap: 10px; font-size: clamp(16px, 1.8vw, 20px); color: #426448; white-space: nowrap;}
+.dot {width: 10px; height: 10px; background: #56835b; border-radius: 50%; flex-shrink: 0;}
+.offline {color: #956233;}.offline .dot {background: #956233;}
+main {flex: 1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(16px, 2.5vw, 32px); align-content: center; align-items: center;}
+main.driving {grid-template-columns: 1fr;}
+.vehicle-status {display: flex; gap: clamp(18px, 3vw, 32px); align-items: center; padding: clamp(20px, 3vw, 40px) 0; min-width: 0;}
+.status-icon {width: clamp(64px, 9vw, 112px); height: clamp(64px, 9vw, 112px); flex-shrink: 0; display: grid; place-items: center; font-size: clamp(32px, 4.8vw, 56px); font-weight: 500; border-radius: 24%; color: #305e46; background: #e1eadb;}
+.eyebrow {font-size: 14px; letter-spacing: 1.5px; font-weight: 600; color: #647e66; margin: 0 0 10px;}
+h1 {font-size: clamp(28px, 3.8vw, 46px); font-weight: 600; line-height: 1.15; letter-spacing: -1px; margin: 0; overflow-wrap: anywhere;}
+.description {font-size: clamp(18px, 2vw, 23px); color: #586d5d; margin: 16px 0 0; max-width: 34ch;}
+.updated {font-size: 16px; color: #64786a; margin: 18px 0 0;}
+.activity-panel {background: white; border: 1px solid #dce4d8; border-radius: 16px; padding: clamp(18px, 2.5vw, 30px); min-width: 0;}
+h2 {font-size: clamp(20px, 2vw, 25px); font-weight: 600; margin: 0 0 12px;}
+ul {list-style: none; padding: 0; margin: 0;}
+li {display: flex; align-items: center; gap: 12px; padding: clamp(14px, 2.5vh, 24px) 0; border-top: 1px solid #e4eae0; font-size: clamp(18px, 1.9vw, 22px);}
+.event-dot {width: 8px; height: 8px; border-radius: 50%; background: #77917b; flex-shrink: 0;}
+.event-title {flex: 1; min-width: 0; overflow-wrap: anywhere;}
+li time {color: #637868; font-size: 16px; white-space: nowrap;}
+.empty {font-size: 18px; color: #637868; margin: 24px 0 8px;}
+.alert {grid-column: 1 / -1; color: #8b562b; background: #f4e9d8; padding: 16px; border-radius: 10px; font-size: 18px; margin: 0;}
+footer {display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: #667d6c; padding-top: 12px; border-top: 1px solid #d8e0d6;}
+@media (max-width: 700px) {main {grid-template-columns: 1fr; align-content: start;}.vehicle-status {padding: 12px 0;}.shell {gap: 18px;}h1 {font-size: clamp(28px, 6vw, 38px);}}
+@media (max-height: 520px) and (min-width: 701px) {.shell {padding: 16px 24px; gap: 14px;}.vehicle-status {padding: 8px 0;}.description {margin-top: 10px;}.updated {margin-top: 10px;}.activity-panel {padding: 18px;}li {padding: 12px 0;}header {padding-bottom: 12px;}footer {padding-top: 8px;}}
+@media (max-width: 380px) {header {flex-wrap: wrap; gap: 8px;}.vehicle-status {gap: 14px;}.status-icon {width: 52px; height: 52px;}.description {font-size: 18px;}footer {font-size: 12px;}}
+@media (max-height: 420px) and (min-width: 560px) {.shell {padding: 12px 16px; gap: 12px;}header {padding-bottom: 8px;}main {grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px; align-content: center;}.vehicle-status {gap: 14px; padding: 0;}.status-icon {width: 52px; height: 52px; font-size: 30px;}h1 {font-size: 26px;}.eyebrow {font-size: 12px; margin-bottom: 6px;}.description {font-size: 18px; margin-top: 10px;}.updated {font-size: 14px; margin-top: 10px;}.activity-panel {padding: 14px;}h2 {font-size: 20px; margin-bottom: 8px;}li {font-size: 18px; padding: 10px 0; gap: 8px;}li time {font-size: 14px;}footer {padding-top: 8px; font-size: 12px;}}

@@ -1,0 +1,32 @@
+{
+  "name": "aiden-consumer-sample-firebase",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "functions",
+    "hosting"
+  ],
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspace hosting",
+    "start": "npm run build && firebase emulators:start --project demo-consumer-sample",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspace functions",
+    "test:integration": "npm run build && node scripts/test-integration.mjs",
+    "deploy": "node scripts/check-deploy.mjs && npm run build && firebase deploy",
+    "simulate": "node scripts/simulate-vehicle.mjs"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.0.0"
+  },
+  "overrides": {
+    "@firebase/app": "0.16.2",
+    "@firebase/app-compat": "0.5.18",
+    "@grpc/grpc-js": "^1.14.0"
+  }
+}
